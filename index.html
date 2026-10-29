@@ -23,6 +23,7 @@
     <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
       <a href="#especialidad">Reparaciones</a>
       <a href="#diagnosis">Diagnosis</a>
+      <a href="#verificacion">Verificación</a>
       <a href="#proceso">Envíos</a>
       <a class="nav-action" href="#contacto">Solicitar diagnóstico <span aria-hidden="true">↗</span></a>
     </nav>
@@ -81,6 +82,48 @@
             <div><dt>Proceso</dt><dd>Prueba antes de reparar</dd></div>
           </dl>
           <a class="workbench-action" href="#contacto" data-select-piece="Bomba inyectora">Consultar esta pieza <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="verification section-pad" id="verificacion" aria-labelledby="verification-title">
+      <div class="verification-intro reveal">
+        <h2 id="verification-title">Así comprobamos<br>cada pieza.</h2>
+        <p>Bombas e inyectores pasan por una diagnosis en banco. El resultado nos permite valorar la reparación y explicarte el presupuesto antes de empezar.</p>
+      </div>
+      <div class="verification-display">
+        <figure class="verification-visual reveal" data-tilt>
+          <img data-verification-image src="images/bomba-en-banco.jpg" alt="Imagen ilustrativa de una bomba inyectora en un banco de pruebas" loading="lazy" width="1448" height="1086">
+          <figcaption><span data-verification-label>Bomba inyectora</span><span>Imagen ilustrativa · banco de pruebas</span></figcaption>
+        </figure>
+        <div class="verification-details">
+          <div class="verification-selector reveal" role="group" aria-label="Selecciona qué pieza quieres ver">
+            <button type="button" class="verification-choice is-selected" data-verification-choice disabled aria-pressed="true"
+              data-title="Bomba inyectora"
+              data-image="images/bomba-en-banco.jpg"
+              data-image-alt="Imagen ilustrativa de una bomba inyectora en un banco de pruebas"
+              data-description="Comprobamos su funcionamiento en el banco para determinar el estado de la pieza y orientar la reparación."
+              data-piece="Bomba inyectora">
+              <span>Bombas</span>
+            </button>
+            <button type="button" class="verification-choice" data-verification-choice disabled aria-pressed="false"
+              data-title="Inyector diésel"
+              data-image="images/detalle-inyectores.jpg"
+              data-image-alt="Imagen ilustrativa de componentes de un inyector diésel"
+              data-description="Revisamos el inyector en nuestros equipos de prueba y valoramos el resultado antes de definir la intervención."
+              data-piece="Inyector o inyectores">
+              <span>Inyectores</span>
+            </button>
+          </div>
+          <h3 data-verification-title aria-live="polite" aria-atomic="true">Bomba inyectora</h3>
+          <p class="verification-description" data-verification-description>Comprobamos su funcionamiento en el banco para determinar el estado de la pieza y orientar la reparación.</p>
+          <ol class="verification-sequence" aria-label="Fases de la comprobación">
+            <li class="reveal"><span>01</span><div><h4>Preparación</h4><p>Montamos la pieza en el banco correspondiente.</p></div></li>
+            <li class="reveal"><span>02</span><div><h4>Diagnosis</h4><p>Comprobamos el funcionamiento del componente.</p></div></li>
+            <li class="reveal"><span>03</span><div><h4>Valoración</h4><p>El resultado orienta la reparación y el presupuesto.</p></div></li>
+          </ol>
+          <p class="verification-note">Las imágenes son ilustrativas; las comprobaciones se realizan en los bancos propios del taller.</p>
+          <a class="verification-action" href="#contacto" data-verification-action data-select-piece="Bomba inyectora">Consultar mi pieza <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>

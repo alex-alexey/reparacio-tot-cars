@@ -167,6 +167,43 @@
     });
   });
 
+  const verificationChoices = [...document.querySelectorAll("[data-verification-choice]")];
+  const verificationDisplay = document.querySelector(".verification-display");
+  const verificationImage = document.querySelector("[data-verification-image]");
+  const verificationLabel = document.querySelector("[data-verification-label]");
+  const verificationTitle = document.querySelector("[data-verification-title]");
+  const verificationDescription = document.querySelector("[data-verification-description]");
+  const verificationAction = document.querySelector("[data-verification-action]");
+  let verificationSwapTimer;
+
+  verificationChoices.forEach((choice) => {
+    choice.disabled = false;
+    choice.addEventListener("click", () => {
+      if (choice.getAttribute("aria-pressed") === "true") return;
+
+      verificationChoices.forEach((option) => {
+        const selected = option === choice;
+        option.setAttribute("aria-pressed", String(selected));
+        option.classList.toggle("is-selected", selected);
+      });
+
+      verificationDisplay?.classList.add("is-switching");
+      window.clearTimeout(verificationSwapTimer);
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      verificationSwapTimer = window.setTimeout(() => {
+        if (verificationImage) {
+          verificationImage.src = choice.dataset.image;
+          verificationImage.alt = choice.dataset.imageAlt;
+        }
+        if (verificationLabel) verificationLabel.textContent = choice.dataset.title;
+        if (verificationTitle) verificationTitle.textContent = choice.dataset.title;
+        if (verificationDescription) verificationDescription.textContent = choice.dataset.description;
+        if (verificationAction) verificationAction.dataset.selectPiece = choice.dataset.piece;
+        requestAnimationFrame(() => verificationDisplay?.classList.remove("is-switching"));
+      }, prefersReducedMotion ? 0 : 170);
+    });
+  });
+
   document.querySelectorAll("[data-select-piece]").forEach((link) => {
     link.addEventListener("click", () => {
       if (pieceSelect) pieceSelect.value = link.dataset.selectPiece;
