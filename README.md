@@ -10,7 +10,9 @@ En el repositorio, abre **Settings → Pages** y selecciona **Deploy from a bran
 
 ## Antes de publicar
 
-- Añade los datos reales del taller en `assets/config.js` (teléfono, WhatsApp, correo y localidad). El formulario abre el canal configurado; no almacena ni envía los datos por sí solo.
-- Las imágenes del banco son ilustrativas. Sustitúyelas por fotos reales del taller antes de presentarlas como evidencia de sus instalaciones.
+- El teléfono, WhatsApp y dirección del taller están configurados en `assets/config.js`. El correo sigue vacío y es opcional. El formulario prepara la consulta en WhatsApp; no almacena ni envía los datos por sí solo.
+- El dominio canónico y `sitemap.xml` apuntan a la URL de GitHub Pages. Si publicas con un dominio propio, actualiza esas URL en `index.html`, `robots.txt` y `sitemap.xml` antes del lanzamiento.
+- Las fotos de la sección de verificación son del taller. Las imágenes de portada y diagnosis siguen siendo ilustrativas.
+- Tras publicar, verifica el dominio en Google Search Console, envía `sitemap.xml` y solicita la indexación de la página. Completa o reclama también el Perfil de Empresa de Google con el mismo nombre, teléfono y dirección.
 
 Las fuentes locales incluyen sus archivos de licencia en `assets/fonts/`.
